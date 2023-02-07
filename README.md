@@ -1,4 +1,13 @@
 # U-TRUEQUE
+Autores 
+* **Michael Stevens Diaz** 
+* **Stiven David Higidio**
+* **Kevin Stiven Jimenez** 
+* **Faber Antonio Ospina**
+* **Hamilton Efrain Pipicano** 
+* **Karen Yulieth Ruales**
+* **Pablo Andres Ramirez** 
+
 RESUMEN
 U-Trueque es proyecto para realizar la moneda electrónica unicaucana denomida UniCoin que busca una forma estándar y local 
 en la venta de productos y servicios entre miembros de la comunidad unicaucana. Por ejemplo, un estudiante de ingeniería de
