@@ -42,15 +42,15 @@ public class Transaction extends Sha256{
         Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
         SecretKeySpec secret_key = new SecretKeySpec(signingKey.getBytes(), "HmacSHA256");
         sha256_HMAC.init(secret_key);
-
-        signature = sha256_HMAC.doFinal(hashTx.getBytes());
+        
+        this.signature = sha256_HMAC.doFinal(hashTx.getBytes());
     }
 
     public boolean isValid() throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
         if (fromAddress == null) {
             return true;
         }
-
+        System.out.println("isValid:"+signature);
         if (signature == null || signature.length == 0) {
             throw new SignatureException("No signature in this transaction");
         }
@@ -59,7 +59,7 @@ public class Transaction extends Sha256{
         Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
         SecretKeySpec secret_key = new SecretKeySpec(fromAddress.getBytes(), "HmacSHA256");
         sha256_HMAC.init(secret_key);
-
+        
         return MessageDigest.isEqual(signature, sha256_HMAC.doFinal(hashTx.getBytes()));
     }
 	public String getFromAddress() {

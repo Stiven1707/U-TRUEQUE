@@ -114,9 +114,7 @@ public class BlockChain {
         // Check if the Genesis block hasn't been tampered with by comparing
         // the output of createGenesisBlock with the first block on our chain
         String realGenesis = createGenesisBlock().toString();
-        //TODO 
-        System.out.println(realGenesis);
-        System.out.println(this.chain.get(0).toString());
+        
         if (!realGenesis.equals(this.chain.get(0).toString())) {
             return false;
         }
@@ -128,9 +126,6 @@ public class BlockChain {
             Block previousBlock = chain.get(i - 1);
 
             if (!previousBlock.getHash().equals(currentBlock.getPreviousHash())) {
-                return false;
-            }
-            if (!currentBlock.hasValidTransactions()) {
                 return false;
             }
             if (!currentBlock.getHash().equals(currentBlock.calculateHash())) {

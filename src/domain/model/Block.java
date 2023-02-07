@@ -72,5 +72,14 @@ public class Block extends Sha256 {
 	public String getPreviousHash() {
 		return previousHash;
 	}
+	
+	public void setPreviousHash(String previousHash) {
+		this.previousHash = previousHash;
+	}
+
+	@Override
+	public String toString() {
+		return "Block [transactions=" + transactions + ", nonce=" + nonce + "]";
+	}
     
 }
